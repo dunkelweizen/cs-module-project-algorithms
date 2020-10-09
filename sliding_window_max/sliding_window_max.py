@@ -2,19 +2,21 @@
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
 '''
+
+
 def sliding_window_max(nums, k):
-    windows = len(nums) - (k-1)
+    windows = len(nums) - (k - 1)
     window_nums = []
     result = []
     start = 0
     stop = k
-    for i in range(windows+1):
-        window_nums.append([nums[start:stop]])
+    for i in range(windows):
+        window_nums.append(nums[start:stop])
         start += 1
         stop += 1
-    for i in range(windows+1):
-        window_nums.sort(reverse=True)
-
+    window_nums = list(map(sorted, window_nums))
+    for subl in window_nums:
+        result.append(subl[-1])
 
     return result
 
