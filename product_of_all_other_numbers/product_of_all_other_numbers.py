@@ -3,7 +3,6 @@ Input: a List of integers
 Returns: a List of integers
 Return a list of integers where each l[i] is equal to the product of all other values in the list except the initial arr[i]
 O(n) time means no nested loops
-
 '''
 import math
 
@@ -13,6 +12,7 @@ def product_of_all_other_numbers(arr):
         product_values[i] = arr[:i] + arr[i+1:]
     # now I have a list of lists of the numbers excluding each index
     # how do I find all the products without nested loops?
+
 
 
 
